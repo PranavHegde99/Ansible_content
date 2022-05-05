@@ -1,0 +1,14 @@
+ansible-playbook -i hosts.ini main.yml -e 'ansible_python_interpreter=/usr/bin/python'
+
+
+S shreekumar09:39
+-e "user=pranav"
+/newgit/{{user}}
+S shreekumar09:42
+-e "users=[pranav,shreekumar,abc]"
+S shreekumar09:43
+include_tasks
+
+
+
+git clone https://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@github.com/Virtual-E-Dressing/VirtualEDressing.git

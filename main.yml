@@ -1,0 +1,31 @@
+---
+- name: Ansible GIT module demo
+  hosts: all
+  gather_facts: no
+  vars:
+    username: PranavHegde99
+    password: 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
+    repo_name: Movie-Ticket_ReactN
+  tasks:
+   - name: Find files in path
+     win_find:
+        paths: "/newgit/git_dir"
+        hidden: yes
+
+   - name: Remove directory structure
+     win_file:
+        path: "/newgit/git_dir"
+        state: absent
+
+   - name: create directory
+     win_file: 
+        path: "/newgit/git_dir"
+        state: directory
+
+   - name: Clone repository
+     win_shell: "git clone https://{{ username | urlencode }}:{{ password | urlencode }}@github.com/{{ username }}/{{ repo_name }}.git"
+     args: 
+      chdir: "/newgit/git_dir" 
+
+      
+        
