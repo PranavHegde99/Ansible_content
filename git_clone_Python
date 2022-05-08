@@ -1,0 +1,3 @@
+HTTPS_REMOTE_URL = 'https://{}:x-oauth-basic@github.com/PranavHegde99/5TH_CNLAB'.format(TOKEN)
+DEST_NAME = 'Dunna'
+cloned_repo = Repo.clone_from(HTTPS_REMOTE_URL, DEST_NAME)
